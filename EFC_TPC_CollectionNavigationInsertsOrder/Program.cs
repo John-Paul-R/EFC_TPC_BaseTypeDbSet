@@ -40,6 +40,7 @@ public class MyContext : DbContext
         });
 
     // Declare DBSets
+    public DbSet<AbstractSkill> Skills { get; set; }
     public DbSet<MartialSkill> MartialSkills { get; set; }
     public DbSet<MartialSkill> MagicSkills { get; set; }
 
