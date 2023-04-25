@@ -11,7 +11,7 @@ public class Program
         {
             // Recreate database
             db.Database.EnsureDeleted();
-            db.Database.EnsureCreated();
+            db.Database.Migrate();
 
             // Seed database
 
