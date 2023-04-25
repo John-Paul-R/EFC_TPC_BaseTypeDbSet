@@ -1,10 +1,21 @@
 namespace EFSampleApp;
 
+public class SkillArchetype
+{
+    public long Id { get; set; }
+    public string Name { get; set; } = null!;
+
+    public ICollection<AbstractSkill> Skills { get; set; } = null!;
+}
+
 public abstract class AbstractSkill
 {
     public long Id { get; set; }
 
     public string Name { get; set; } = null!;
+
+    public long ArchetypeId { get; set; }
+    public SkillArchetype Archetype { get; set; } = null!;
 }
 
 public class MartialSkill : AbstractSkill

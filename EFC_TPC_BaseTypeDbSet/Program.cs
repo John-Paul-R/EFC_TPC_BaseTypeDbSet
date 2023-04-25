@@ -71,6 +71,10 @@ public class MyContext : DbContext
             .HasMany<PlayerToSkill>()
             .WithOne(pts => pts.Skill);
 
+        modelBuilder.Entity<SkillArchetype>()
+            .HasMany(sa => sa.Skills)
+            .WithOne(s => s.Archetype)
+            .HasForeignKey(s => s.ArchetypeId);
 
     }
 }
